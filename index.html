@@ -1,0 +1,918 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"/&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
+<p class="p1">&lt;title&gt;Corpus Christi 2026&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap');</p>
+<p class="p1">:root{--gold:#D4AF37;--gold-light:#F0D060;--gold-dark:#A8891A;--cream:#FBF8F1;--cream-dark:#F2EDE0;--white:#FFFFFF;--text-dark:#1a1208;--text-mid:#4a3f28;--text-light:#7a6e58;}</p>
+<p class="p1">*{box-sizing:border-box;margin:0;padding:0;}</p>
+<p class="p1">body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);min-height:100vh;}</p>
+<p class="p1">.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;overflow:hidden;background:linear-gradient(160deg,#1a0f02 0%,#2d1e06 40%,#1a0f02 100%);}</p>
+<p class="p1">.hero-pattern{position:absolute;inset:0;opacity:.12;background-image:radial-gradient(circle at 20% 30%,var(--gold) 1px,transparent 1px),radial-gradient(circle at 80% 70%,var(--gold) 1px,transparent 1px);background-size:60px 60px,80px 80px;}</p>
+<p class="p1">.cross-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.06;}</p>
+<p class="p1">.cross-bg svg{width:60vmin;height:60vmin;color:var(--gold);}</p>
+<p class="p1">.hero-badge{display:inline-block;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem;}</p>
+<p class="p1">.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4.2rem);font-weight:900;line-height:1.15;color:var(--gold-light);text-shadow:0 2px 20px rgba(212,175,55,.3);margin-bottom:.8rem;}</p>
+<p class="p1">.hero h1 span{color:#fff;}</p>
+<p class="p1">.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.4rem);color:rgba(255,255,255,.75);font-style:italic;margin-bottom:2rem;}</p>
+<p class="p1">.scroll-cta{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;animation:bounce 2s infinite;}</p>
+<p class="p1">@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}</p>
+<p class="p1">nav{position:sticky;top:0;z-index:100;background:rgba(251,248,241,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--gold);padding:0 1rem;}</p>
+<p class="p1">.nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;gap:0;}</p>
+<p class="p1">.nav-inner::-webkit-scrollbar{display:none;}</p>
+<p class="p1">.nav-brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-dark);white-space:nowrap;padding:.9rem 1rem .9rem 0;margin-right:.5rem;border-right:1px solid var(--cream-dark);}</p>
+<p class="p1">.tab-btn{display:flex;align-items:center;gap:.4rem;padding:.85rem .75rem;white-space:nowrap;font-size:.75rem;font-weight:500;color:var(--text-light);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;}</p>
+<p class="p1">.tab-btn:hover{color:var(--gold-dark);}</p>
+<p class="p1">.tab-btn.active{color:var(--gold-dark);border-bottom-color:var(--gold);font-weight:600;}</p>
+<p class="p1">.tab-btn svg{width:14px;height:14px;}</p>
+<p class="p1">.section{display:none;}</p>
+<p class="p1">.section.active{display:block;}</p>
+<p class="p1">.container{max-width:900px;margin:0 auto;padding:3rem 1.25rem;}</p>
+<p class="p1">.section-header{text-align:center;margin-bottom:2.5rem;}</p>
+<p class="p1">.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700;color:var(--text-dark);margin-bottom:.5rem;}</p>
+<p class="p1">.underline{width:60px;height:3px;background:var(--gold);border-radius:2px;margin:.5rem auto .8rem;}</p>
+<p class="p1">.section-header p{color:var(--text-light);font-size:.95rem;max-width:500px;margin:0 auto;}</p>
+<p class="p1">.card{background:var(--white);border-radius:16px;box-shadow:0 2px 16px rgba(180,150,50,.08);padding:1.75rem;border:1px solid var(--cream-dark);}</p>
+<p class="p1">.card-gold{background:linear-gradient(135deg,#fdf8e1 0%,#fff9e6 100%);border:1.5px solid rgba(212,175,55,.35);}</p>
+<p class="p1">.gold-tag{display:inline-flex;align-items:center;gap:.35rem;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:50px;margin-bottom:.8rem;}</p>
+<p class="p1">.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}</p>
+<p class="p1">@media(max-width:600px){.grid-2{grid-template-columns:1fr;}}</p>
+<p class="p1">.blockquote{border-left:4px solid var(--gold);padding:1rem 1.25rem;background:linear-gradient(90deg,rgba(212,175,55,.06),transparent);border-radius:0 8px 8px 0;font-style:italic;color:var(--text-mid);font-family:'Playfair Display',serif;font-size:1.05rem;margin:1.25rem 0;}</p>
+<p class="p1">.stepper{display:flex;flex-direction:column;gap:0;}</p>
+<p class="p1">.step-item{display:flex;gap:0;}</p>
+<p class="p1">.step-line-col{display:flex;flex-direction:column;align-items:center;margin-right:1.1rem;}</p>
+<p class="p1">.step-num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(212,175,55,.3);}</p>
+<p class="p1">.step-connector{flex:1;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(212,175,55,.2));min-height:1.5rem;}</p>
+<p class="p1">.step-content{flex:1;padding-bottom:1.75rem;}</p>
+<p class="p1">.step-item:last-child .step-connector{display:none;}</p>
+<p class="p1">.step-item:last-child .step-content{padding-bottom:0;}</p>
+<p class="p1">.step-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--text-dark);margin-bottom:.3rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;}</p>
+<p class="p1">.step-title .chevron{transition:transform .3s;margin-left:auto;color:var(--gold-dark);}</p>
+<p class="p1">.step-title.open .chevron{transform:rotate(180deg);}</p>
+<p class="p1">.step-body{overflow:hidden;max-height:0;transition:max-height .5s ease;}</p>
+<p class="p1">.step-body.open{max-height:1400px;}</p>
+<p class="p1">.step-body-inner{margin-top:.6rem;padding:1rem 1.1rem;background:var(--cream);border-radius:10px;font-size:.9rem;line-height:1.75;color:var(--text-mid);}</p>
+<p class="p1">.soguitas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem;}</p>
+<p class="p1">@media(max-width:480px){.soguitas-grid{grid-template-columns:1fr 1fr;}}</p>
+<p class="p1">.nudo-card{background:var(--white);border-radius:12px;padding:.85rem;text-align:center;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;box-shadow:0 1px 6px rgba(0,0,0,.05);}</p>
+<p class="p1">.nudo-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(212,175,55,.2);border-color:var(--gold);}</p>
+<p class="p1">.nudo-card.selected{border-color:var(--gold);background:#fffbea;}</p>
+<p class="p1">.nudo-icon{font-size:1.8rem;margin-bottom:.3rem;}</p>
+<p class="p1">.nudo-label{font-size:.75rem;font-weight:600;color:var(--text-mid);}</p>
+<p class="p1">.progress-bar-wrap{background:var(--cream-dark);border-radius:50px;height:8px;margin-top:.5rem;}</p>
+<p class="p1">.progress-bar{height:8px;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:50px;transition:width .4s ease;}</p>
+<p class="p1">.yt-btn{display:inline-flex;align-items:center;gap:.65rem;background:#FF0000;color:#fff;border-radius:50px;padding:.65rem 1.25rem;text-decoration:none;font-size:.85rem;font-weight:700;font-family:'Inter',sans-serif;margin:.5rem 0;box-shadow:0 3px 10px rgba(255,0,0,.25);transition:transform .15s,box-shadow .15s;}</p>
+<p class="p1">.yt-btn:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(255,0,0,.35);}</p>
+<p class="p1">.yt-btn svg{width:18px;height:18px;flex-shrink:0;}</p>
+<p class="p1">.yt-song{font-size:.78rem;opacity:.88;font-style:italic;font-weight:400;}</p>
+<p class="p1">.silence-box{background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.5rem;text-align:center;margin:1rem 0;}</p>
+<p class="p1">.silence-box p{color:rgba(255,255,255,.7);font-style:italic;font-size:.9rem;}</p>
+<p class="p1">.silence-box .big{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold-light);margin-bottom:.4rem;}</p>
+<p class="p1">.social-btn{background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.25);color:var(--gold-light);padding:.5rem 1.1rem;border-radius:50px;font-size:.78rem;font-weight:500;display:flex;align-items:center;gap:.4rem;cursor:pointer;transition:background .2s;text-decoration:none;}</p>
+<p class="p1">.social-btn:hover{background:rgba(212,175,55,.22);}</p>
+<p class="p1">.gap-y&gt;*+*{margin-top:1.25rem;}</p>
+<p class="p1">p{line-height:1.75;}</p>
+<p class="p1">h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem;}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- HERO --&gt;</p>
+<p class="p1">&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-pattern"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cross-bg"&gt;&lt;svg viewBox="0 0 100 100" fill="currentColor"&gt;&lt;rect x="42" y="5" width="16" height="90" rx="4"/&gt;&lt;rect x="10" y="35" width="80" height="16" rx="4"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="position:relative;z-index:1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-badge"&gt;✦ Solemnidad del Corpus Christi 2026 ✦&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;&lt;span&gt;Pan de Vida,&lt;/span&gt;&lt;br&gt;Sangre bendita&lt;br&gt;&lt;span style="color:var(--gold-light)"&gt;eres Tú&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="hero-sub"&gt;Adoración, Procesión y Compromiso Eucarístico&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin:1.5rem auto 2rem;width:130px;height:130px;filter:drop-shadow(0 0 24px rgba(212,175,55,.55));"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" fill="none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;g stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="60" y2="20"/&gt;&lt;line x1="60" y1="60" x2="60" y2="100"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="20" y2="60"/&gt;&lt;line x1="60" y1="60" x2="100" y2="60"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="32" y2="32"/&gt;&lt;line x1="60" y1="60" x2="88" y2="88"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="88" y2="32"/&gt;&lt;line x1="60" y1="60" x2="32" y2="88"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="22" y2="45"/&gt;&lt;line x1="60" y1="60" x2="98" y2="75"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="98" y2="45"/&gt;&lt;line x1="60" y1="60" x2="22" y2="75"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="45" y2="22"/&gt;&lt;line x1="60" y1="60" x2="75" y2="98"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="60" y1="60" x2="75" y2="22"/&gt;&lt;line x1="60" y1="60" x2="45" y2="98"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="60" cy="60" r="26" stroke="#D4AF37" stroke-width="3" fill="rgba(212,175,55,0.08)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="60" cy="60" r="19" fill="rgba(240,220,150,0.18)" stroke="#F0D060" stroke-width="1.5"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="60" y1="49" x2="60" y2="71" stroke="#F0D060" stroke-width="2" stroke-linecap="round"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="49" y1="60" x2="71" y2="60" stroke="#F0D060" stroke-width="2" stroke-linecap="round"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ellipse cx="60" cy="105" rx="7" ry="5" fill="#D4AF37" opacity=".9"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="57" y="105" width="6" height="28" rx="3" fill="#D4AF37"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ellipse cx="60" cy="135" rx="22" ry="7" fill="#D4AF37" opacity=".85"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ellipse cx="60" cy="133" rx="14" ry="4" fill="#B8960C" opacity=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="scroll-cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Explorar</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- NAV --&gt;</p>
+<p class="p1">&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="nav-brand"&gt;✦ CC 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn active" onclick="showTab('inicio')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/&gt;&lt;polyline points="9 22 9 12 15 12 15 22"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Inicio</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn" onclick="showTab('guia')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Preparación</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn" onclick="showTab('ninos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;circle cx="12" cy="8" r="4"/&gt;&lt;path d="M20 21a8 8 0 1 0-16 0"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Niños</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn" onclick="showTab('jovenes')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Jóvenes</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn" onclick="showTab('fotos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;rect x="3" y="3" width="18" height="18" rx="2"/&gt;&lt;circle cx="8.5" cy="8.5" r="1.5"/&gt;&lt;polyline points="21 15 16 10 5 21"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Fotos</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="tab-btn" onclick="showTab('recursos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/&gt;&lt;path d="M19.07 4.93a10 10 0 0 1 0 14.14"/&gt;&lt;path d="M15.54 8.46a5 5 0 0 1 0 7.07"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Recursos</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ INICIO ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-inicio" class="section active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Inicio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Fundamentación Corpus Christi 2026 — Del mandato a la Fuente&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card" style="border-top:4px solid #888;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="gold-tag" style="background:linear-gradient(135deg,#666,#888);"&gt;✓ Corpus 2025&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;El Mandato&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;blockquote class="blockquote"&gt;"Denles ustedes de comer"&lt;/blockquote&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:.88rem;color:var(--text-light)"&gt;El año pasado fuimos enviados. Recibimos la misión de alimentar a nuestros hermanos, de salir a las periferias y llevar el pan de la solidaridad.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card card-gold" style="border-top:4px solid var(--gold);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="gold-tag"&gt;⏱ Corpus 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;La Fuente&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;blockquote class="blockquote"&gt;"Pan de Vida, Sangre bendita eres Tú"&lt;/blockquote&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:.88rem;color:var(--text-light)"&gt;Este año volvemos a la Fuente. No podemos dar lo que no tenemos. La Eucaristía nos convoca a beber de Cristo antes de salir a servir.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;gap:1rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"&gt;&lt;path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/&gt;&lt;path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;span style="display:inline-block;padding:.25rem .7rem;border-radius:50px;font-size:.72rem;font-weight:600;background:rgba(212,175,55,.12);color:var(--gold-dark);border:1px solid rgba(212,175,55,.25);"&gt;Fundamentación 2026&lt;/span&gt;&lt;h3 style="margin-top:.4rem"&gt;Del mandato a la Fuente&lt;/h3&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;En el año 2025 el Señor nos interpeló: &lt;em&gt;"Denles ustedes de comer"&lt;/em&gt;. Respondimos saliendo, compartiendo, sirviendo. Pero toda misión auténtica nace del encuentro con Cristo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;El Corpus Christi 2026 nos devuelve al corazón: &lt;strong&gt;la Eucaristía como Fuente y Cumbre&lt;/strong&gt; de la vida cristiana. Es el Pan de Vida que nos transforma, que nos hace Iglesia, que nos envía renovados al mundo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="blockquote"&gt;"La Eucaristía es la síntesis y la suma de nuestra fe." — &lt;em&gt;San Juan Pablo II&lt;/em&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gold-tag"&gt;🎵 Himno Oficial&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-bottom:.6rem"&gt;"Pan de Vida, Sangre bendita eres Tú"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.88rem;color:var(--text-light);margin-bottom:.85rem"&gt;Escuchá el himno del Corpus Christi 2026.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.youtube.com/watch?v=nKwqUg9sn8o" onclick="abrirYT(this.href);return false;" style="display:block;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.18);text-decoration:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="https://img.youtube.com/vi/nKwqUg9sn8o/hqdefault.jpg" alt="Himno" style="width:100%;display:block;border-radius:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);border-radius:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="width:58px;height:58px;background:rgba(212,175,55,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#fff"&gt;&lt;polygon points="5 3 19 12 5 21 5 3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:.6rem .85rem;border-radius:0 0 12px 12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="color:#fff;font-size:.78rem;font-weight:600;"&gt;▶ Ver en YouTube · Himno Oficial Corpus Christi 2026&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Invitación a Recursos --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:16px;padding:1.35rem 1.5rem;border:1.5px solid rgba(212,175,55,.3);display:flex;align-items:center;gap:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:2rem;flex-shrink:0;"&gt;📂&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="flex:1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;margin-bottom:.3rem;"&gt;¿Buscás materiales para tu adoración?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:rgba(255,255,255,.7);font-size:.82rem;line-height:1.6;"&gt;En la pestaña &lt;strong style="color:var(--gold-light);"&gt;Recursos&lt;/strong&gt; encontrás documentos, guías, playlist y más materiales para acompañar las adoraciones eucarísticas de tu comunidad.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="document.querySelectorAll('.tab-btn')[5].click()" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;border:none;border-radius:50px;padding:.55rem 1rem;font-size:.75rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;white-space:nowrap;"&gt;Ver Recursos →&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-direction:column;gap:.75rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;align-items:center;gap:.75rem;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;span style="font-size:1.5rem"&gt;🍞&lt;/span&gt;&lt;div&gt;&lt;strong style="font-size:.88rem"&gt;Recibir&lt;/strong&gt;&lt;br&gt;&lt;span style="font-size:.82rem;color:var(--text-light)"&gt;Dejarse alimentar por Cristo en la Eucaristía&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="text-align:center;color:var(--gold-dark);font-size:1.3rem"&gt;↓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;align-items:center;gap:.75rem;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;span style="font-size:1.5rem"&gt;🙏&lt;/span&gt;&lt;div&gt;&lt;strong style="font-size:.88rem"&gt;Contemplar&lt;/strong&gt;&lt;br&gt;&lt;span style="font-size:.82rem;color:var(--text-light)"&gt;Adorar al Señor presente en el Santísimo Sacramento&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="text-align:center;color:var(--gold-dark);font-size:1.3rem"&gt;↓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;align-items:center;gap:.75rem;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;span style="font-size:1.5rem"&gt;🕊️&lt;/span&gt;&lt;div&gt;&lt;strong style="font-size:.88rem"&gt;Eucaristizarnos&lt;/strong&gt;&lt;br&gt;&lt;span style="font-size:.82rem;color:var(--text-light)"&gt;Ser transformados para servir con amor renovado&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ PREPARACIÓN ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-guia" class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;❤️ Preparación del Corazón&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Guía litúrgica paso a paso para la Adoración y Procesión&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold" style="border-left:4px solid var(--gold);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.92rem;color:var(--text-mid);line-height:1.8;"&gt;Te presentamos esta guía litúrgica para la adoración en tu comunidad y para la catequesis familiar. Pero también podés usar la propuesta de &lt;strong&gt;Niños&lt;/strong&gt; o los materiales de &lt;strong&gt;Recursos&lt;/strong&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold" style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.85rem;color:var(--text-light)"&gt;Progreso de la celebración&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="progress-label" style="font-weight:700;color:var(--gold-dark);margin:.3rem 0;"&gt;Comenzando…&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="progress-bar-wrap"&gt;&lt;div class="progress-bar" id="prog-bar" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="stepper"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;1&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Rito de inicio y saludo&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Canto de entrada&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://www.youtube.com/watch?v=nKwqUg9sn8o" onclick="abrirYT(this.href);return false;" class="yt-btn"&gt;&lt;svg viewBox="0 0 24 24" fill="white" width="18" height="18"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— "Pan de Vida, Sangre bendita eres Tú"&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="margin-top:.85rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:12px;padding:1.1rem 1.25rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:.88rem;line-height:2;white-space:pre-line;"&gt;Pan de Vida, Sangre bendita.</p>
+<p class="p1">Jesús estás entre nosotros, Jesús sé que estás en mí.</p>
+<p class="p1">Tu cuerpo es la verdadera comida</p>
+<p class="p1">y tu sangre verdadera bebida de amor.</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;span style="color:rgba(255,255,255,.55);font-size:.78rem;font-style:italic;"&gt;— ESTRIBILLO —&lt;/span&gt;</p>
+<p class="p1">Hoy cantamos porque estás presente</p>
+<p class="p1">te adoramos y esto es para siempre.</p>
+<p class="p1">Pan de Vida, Sangre bendita eres tú, Jesús.</p>
+<p class="p1">De la muerte tú me has salvado</p>
+<p class="p1">del pecado ya no soy esclavo.</p>
+<p class="p1">Pan de Vida, Sangre bendita eres tú.</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;span style="color:rgba(255,255,255,.55);font-size:.78rem;font-style:italic;"&gt;— ESTROFA —&lt;/span&gt;</p>
+<p class="p1">Llevaremos la fe por tus senderos,</p>
+<p class="p1">la misión que dejas a tu pueblo, Señor.</p>
+<p class="p1">Hagan esto en memoria mía</p>
+<p class="p1">hasta el fin, Señor te quedas junto a mí.</p>
+<p class="p1">Eucaristía, camino de fe, misión de amor.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-top:1rem"&gt;&lt;strong&gt;Oración inicial:&lt;/strong&gt; Señor Jesús, Pan de Vida eterno, aquí estamos ante Ti. Abre nuestros corazones, calla nuestros miedos y haznos capaces de recibirte. &lt;em&gt;Amén.&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;2&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Exposición del Santísimo&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;El sacerdote coloca la Hostia Consagrada en la Custodia sobre el altar. Todos se arrodillan en adoración silenciosa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://youtu.be/ADzLyvhNFAk" onclick="abrirYT(this.href);return false;" class="yt-btn" style="margin-top:.85rem;"&gt;&lt;svg viewBox="0 0 24 24" fill="white" width="18" height="18"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— Música para la Exposición&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="silence-box"&gt;&lt;div class="big"&gt;🕯️ Momento de Silencio&lt;/div&gt;&lt;p&gt;3 minutos de adoración en silencio.&lt;br&gt;Contemplemos al Señor presente.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Lectura:&lt;/strong&gt; Juan 6, 51-58 — "Yo soy el pan vivo que bajó del cielo…"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;3&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Momento de las soguitas&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Cada persona recibe una soguita. Hacemos nudos para llevar ante el Señor. Tocá cada nudo:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="soguitas-grid" id="nudos-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;😊&lt;/div&gt;&lt;div class="nudo-label"&gt;Alegrías&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;💔&lt;/div&gt;&lt;div class="nudo-label"&gt;Dolores&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;😔&lt;/div&gt;&lt;div class="nudo-label"&gt;Sufrimientos&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;🙏&lt;/div&gt;&lt;div class="nudo-label"&gt;Intenciones&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;👨‍👩‍👧&lt;/div&gt;&lt;div class="nudo-label"&gt;Familia&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="nudo-card" onclick="selectNudo(this)"&gt;&lt;div class="nudo-icon"&gt;💛&lt;/div&gt;&lt;div class="nudo-label"&gt;Gratitud&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="nudo-msg" style="margin-top:.85rem;display:none;" class="blockquote"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;4&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Video de reflexión&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-bottom:.75rem"&gt;Antes del pan compartido, un momento de preparación del corazón:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://youtu.be/QqpQeY9tTaE" onclick="abrirYT(this.href);return false;" class="yt-btn"&gt;&lt;svg viewBox="0 0 24 24" fill="white" width="18" height="18"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— Reflexión previa al Pan Compartido&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;5&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;El pan compartido&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Se reparte un trozo de pan a cada familia. El guía dice: &lt;em&gt;"Este pan que compartimos nos recuerda que la Eucaristía nos hace uno."&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="silence-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="big"&gt;🕯️ Gesto de las Velitas&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Cada familia enciende una velita. La luz representa a Cristo vivo en nuestra casa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="margin-top:.85rem;background:rgba(212,175,55,.12);border-radius:10px;padding:.85rem 1rem;text-align:left;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="color:var(--gold-light);font-weight:700;font-size:.85rem;margin-bottom:.4rem;"&gt;🤝 Gesto de comunión&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="color:rgba(255,255,255,.8);font-size:.83rem;line-height:1.7;"&gt;Cada familia intercambia su velita encendida con la de otra familia cercana. Al hacerlo, se dan un &lt;strong style="color:var(--gold-light);"&gt;abrazo fuerte&lt;/strong&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 6 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;6&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Tú en mí, yo en Ti&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://youtu.be/wJlZnm59K6g" onclick="abrirYT(this.href);return false;" class="yt-btn" style="margin-bottom:1rem;"&gt;&lt;svg viewBox="0 0 24 24" fill="white" width="18" height="18"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— "Tú en mí, yo en Ti"&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:16px;padding:1.5rem 1.35rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.85;font-style:italic;margin-bottom:.75rem;"&gt;Cierra los ojos e intenta repetir al ritmo de tu respiración: &lt;span style="color:var(--gold-light);font-weight:600;"&gt;"Tú en mí... Yo en ti".&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p style="color:rgba(255,255,255,.75);font-size:.86rem;line-height:1.85;"&gt;A veces pensamos en Dios como alguien lejano, pero Jesús quiere estar &lt;strong style="color:var(--gold-light);"&gt;en&lt;/strong&gt; ti. Cuando comulgas, tu cuerpo se convierte en el lugar más sagrado del mundo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- PASO 7 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="step-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-line-col"&gt;&lt;div class="step-num"&gt;7&lt;/div&gt;&lt;div class="step-connector"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title" onclick="toggleStep(this)"&gt;Bendición y procesión&lt;svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-body"&gt;&lt;div class="step-body-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-bottom:.85rem;"&gt;Después de que el sacerdote nos da su bendición, haremos una pequeña procesión alrededor de nuestra iglesia — o en el patio del colegio, o donde se considere oportuno.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Orden procesional:&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul style="padding-left:1.2rem;margin-top:.5rem;display:flex;flex-direction:column;gap:.3rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Cruz procesional y ciriales&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Monaguillos&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Familias y comunidades&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;El Santísimo Sacramento&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="blockquote" style="margin-top:1rem"&gt;"Donde va el Señor, la vida florece."&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ NIÑOS ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-ninos" class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:2rem;margin-bottom:.5rem;"&gt;🌟&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Mi corazón le da la bienvenida a Jesús&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Catequesis para niños · Corpus Christi 2026 · ~60 minutos&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FASE 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-top:4px solid var(--gold);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem;"&gt;📖&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.1rem;"&gt;Fase 1 · 10–12 min&lt;/div&gt;&lt;h3 style="margin:0;"&gt;¿Qué es la Eucaristía?&lt;/h3&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:rgba(255,255,255,.85);font-size:.9rem;line-height:1.85;font-style:italic;"&gt;"¿Saben qué es lo que más le gustaba hacer a Jesús con sus amigos? ¡Comer juntos! Y una noche muy especial, tomó un pan, lo partió y dijo: &lt;span style="color:var(--gold-light);font-weight:600;"&gt;'Esto es mi cuerpo, que se entrega por ustedes.'&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:rgba(255,255,255,.85);font-size:.9rem;line-height:1.85;font-style:italic;margin-top:.75rem;"&gt;Jesús quería quedarse con nosotros para siempre. ¡Se quedó escondido en el pan consagrado! La Eucaristía es como una &lt;span style="color:var(--gold-light);font-weight:600;"&gt;carta de amor&lt;/span&gt;: 'Te quiero tanto que quiero vivir dentro de tu corazón.'"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:rgba(212,175,55,.08);border-radius:12px;padding:1rem 1.1rem;border-left:3px solid var(--gold);display:flex;gap:.75rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="font-size:1.4rem;flex-shrink:0;"&gt;👧👦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-weight:700;font-size:.88rem;color:var(--text-dark);margin-bottom:.25rem;"&gt;Pregunta para la imaginación&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.87rem;color:var(--text-mid);font-style:italic;"&gt;"Si Jesús pudiera visitarte en tu casa, ¿qué le prepararías? ¿Qué le contarías?"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.78rem;color:var(--text-light);margin-top:.3rem;"&gt;Dejar que 2-3 niños respondan antes de pasar a los cantos.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FASE 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-top:4px solid #1db954;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#1db954,#158a3e);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem;"&gt;🎵&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.1rem;"&gt;Fase 2 · 10–15 min&lt;/div&gt;&lt;h3 style="margin:0;"&gt;Canciones de Talita Kum&lt;/h3&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.83rem;color:var(--text-light);margin-bottom:1rem;"&gt;Canal &lt;strong&gt;@musicatalitakum&lt;/strong&gt; por Victoria Obarrio — música católica para niños.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="display:flex;flex-direction:column;gap:.75rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:12px;padding:1rem 1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#fff;font-size:.82rem;"&gt;1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;p style="font-weight:700;font-size:.9rem;color:var(--text-dark);margin-bottom:.2rem;"&gt;Consagración de los niños a Jesús&lt;/p&gt;&lt;p style="font-size:.8rem;color:var(--text-light);"&gt;Canción de apertura — "quiero atar mi corazón al tuyo"&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://www.youtube.com/watch?v=rwzXVqZiWCk" onclick="abrirYT(this.href);return false;" class="yt-btn" style="margin-top:.65rem;font-size:.78rem;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="15" height="15"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— Consagración de los niños a Jesús&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:12px;padding:1rem 1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#fff;font-size:.82rem;"&gt;2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;p style="font-weight:700;font-size:.9rem;color:var(--text-dark);margin-bottom:.2rem;"&gt;Cristo me ama&lt;/p&gt;&lt;p style="font-size:.8rem;color:var(--text-light);"&gt;Para cantar mientras hacen la manualidad&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://www.youtube.com/watch?v=FMJ6aakbwtE" onclick="abrirYT(this.href);return false;" class="yt-btn" style="margin-top:.65rem;font-size:.78rem;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="15" height="15"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— Cristo me ama&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:12px;padding:1rem 1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#fff;font-size:.82rem;"&gt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;p style="font-weight:700;font-size:.9rem;color:var(--text-dark);margin-bottom:.2rem;"&gt;Aquí voy&lt;/p&gt;&lt;p style="font-size:.8rem;color:var(--text-light);"&gt;Para el cierre — antes de las preces&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://www.youtube.com/watch?v=O-d6aFRKANk" onclick="abrirYT(this.href);return false;" class="yt-btn" style="margin-top:.65rem;font-size:.78rem;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="15" height="15"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;Escuchar en YouTube &lt;span class="yt-song"&gt;— Aquí voy&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FASE 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-top:4px solid #e53030;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#e53030,#c00000);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem;"&gt;✂️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.1rem;"&gt;Fase 3 · 20–25 min&lt;/div&gt;&lt;h3 style="margin:0;"&gt;Manualidad: el corazón&lt;/h3&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:var(--cream);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-weight:700;font-size:.88rem;color:var(--text-dark);margin-bottom:.6rem;"&gt;📦 Materiales&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.82rem;color:var(--text-mid);"&gt;🎨 Temperas o marcadores&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.82rem;color:var(--text-mid);"&gt;🌈 Papel de colores&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.82rem;color:var(--text-mid);"&gt;✂️ Tijeras punta roma&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.82rem;color:var(--text-mid);"&gt;🟡 Pegamento en barra&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:.75rem;background:rgba(212,175,55,.1);border-radius:8px;padding:.65rem .85rem;border-left:3px solid var(--gold);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.83rem;color:var(--text-mid);font-style:italic;"&gt;Pedir que cada niño traiga de casa un corazón grande ya dibujado y recortado en cartulina.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-direction:column;gap:.65rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:rgba(212,175,55,.07);border-radius:10px;"&gt;&lt;div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#fff;font-size:.82rem;"&gt;1&lt;/div&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Dentro del corazón dibujan a su &lt;strong&gt;familia, amigos y mascotas&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:rgba(212,175,55,.07);border-radius:10px;"&gt;&lt;div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#fff;font-size:.82rem;"&gt;2&lt;/div&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;&lt;em&gt;"¿Habría lugar para Jesús aquí?"&lt;/em&gt; — le abren un espacio especial y escriben o dibujan su nombre.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:rgba(212,175,55,.08);border-radius:10px;padding:.75rem 1rem;margin-bottom:1rem;border:1px dashed rgba(212,175,55,.4);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:.83rem;color:var(--text-mid);"&gt;🎵 Pueden usar las canciones propuestas en la Fase 2 — o cualquier canción de la &lt;strong&gt;Playlist de Recursos&lt;/strong&gt; — para acompañar este momento.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:12px;padding:1rem 1.2rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;line-height:1.8;"&gt;"Cuando recibimos a Jesús en la comunión, él entra a vivir en nuestro corazón. Y se queda ahí, como un amigo que nunca se va."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- OPCIONAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:1.25rem;border:2px dashed rgba(212,175,55,.45);border-radius:14px;padding:1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);border-radius:50px;padding:.25rem .8rem;margin-bottom:.85rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="font-size:.75rem;"&gt;⭐&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="color:var(--gold-dark);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;"&gt;Opcional&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/fZCIC5nQjns" onclick="abrirYT(this.href);return false;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.1rem 1.2rem;text-decoration:none;border:1.5px solid rgba(212,175,55,.25);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="width:46px;height:46px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff"&gt;&lt;polygon points="5 3 19 12 5 21 5 3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="flex:1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.92rem;line-height:1.4;"&gt;La adoración Eucarística (Santísimo Sacramento) - Mi ratito con Jesús&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="color:rgba(255,255,255,.45);font-size:.72rem;margin-top:.2rem;"&gt;Ver en YouTube&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,.6)" stroke-width="2"&gt;&lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/&gt;&lt;polyline points="15 3 21 3 21 9"/&gt;&lt;line x1="10" y1="14" x2="21" y2="3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FASE 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-top:4px solid #7c3aed;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem;"&gt;🙏&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.1rem;"&gt;Fase 4 · 8–10 min&lt;/div&gt;&lt;h3 style="margin:0;"&gt;Preces sencillas&lt;/h3&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.87rem;color:var(--text-mid);margin-bottom:1rem;"&gt;Los niños sostienen su corazón mientras rezan.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-radius:12px;padding:.85rem 1.1rem;text-align:center;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:#fff;font-weight:700;font-size:.85rem;"&gt;🗣 Respuesta del grupo:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;margin-top:.25rem;"&gt;"Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:10px;padding:.85rem 1rem;"&gt;&lt;p style="font-size:.75rem;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;"&gt;Prece 1 · por la familia&lt;/p&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Jesús, gracias porque nos diste una familia que nos cuida y nos quiere. Bendice a todos los que viven en nuestro corazón.&lt;/p&gt;&lt;p style="font-size:.75rem;color:var(--text-light);margin-top:.3rem;font-style:italic;"&gt;👐 "Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:10px;padding:.85rem 1rem;"&gt;&lt;p style="font-size:.75rem;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;"&gt;Prece 2 · por los que están solos&lt;/p&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Jesús, hay niños que están tristes o solos. Haz que sientan tu amor y que alguien los cuide.&lt;/p&gt;&lt;p style="font-size:.75rem;color:var(--text-light);margin-top:.3rem;font-style:italic;"&gt;👐 "Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:10px;padding:.85rem 1rem;"&gt;&lt;p style="font-size:.75rem;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;"&gt;Prece 3 · por los enfermos&lt;/p&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Jesús, tú que eres el pan de la vida, dale fuerzas a los que están enfermos y acompáñalos.&lt;/p&gt;&lt;p style="font-size:.75rem;color:var(--text-light);margin-top:.3rem;font-style:italic;"&gt;👐 "Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--cream);border-radius:10px;padding:.85rem 1rem;"&gt;&lt;p style="font-size:.75rem;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;"&gt;Prece 4 · por los que van a comulgar&lt;/p&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Jesús, cuando llegue el día de nuestra primera comunión, ayúdanos a recibirte con mucho amor.&lt;/p&gt;&lt;p style="font-size:.75rem;color:var(--text-light);margin-top:.3rem;font-style:italic;"&gt;👐 "Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:rgba(212,175,55,.08);border-radius:10px;padding:.85rem 1rem;border:1px dashed var(--gold);"&gt;&lt;p style="font-size:.75rem;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;"&gt;Prece libre · de los niños&lt;/p&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;La maestra invita a cada niño a decir en voz alta una intención propia &lt;em&gt;("yo pido por...")&lt;/em&gt;.&lt;/p&gt;&lt;p style="font-size:.75rem;color:var(--text-light);margin-top:.3rem;font-style:italic;"&gt;👐 "Jesús, ven a vivir en nuestro corazón."&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.25rem 1.35rem;text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:var(--gold-light);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem;"&gt;✝ Oración de cierre · todos juntos&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:rgba(255,255,255,.88);font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.85;"&gt;"Jesús, hoy te abrimos la puerta de nuestro corazón. Gracias porque en la Eucaristía te quedas con nosotros para siempre. Ayúdanos a quererte cada día un poquito más. Amén."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- OPCIONAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:1.25rem;border:2px dashed rgba(212,175,55,.45);border-radius:14px;padding:1.1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);border-radius:50px;padding:.25rem .8rem;margin-bottom:.85rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="font-size:.75rem;"&gt;⭐&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="color:var(--gold-dark);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;"&gt;Opcional&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://youtu.be/fZCIC5nQjns" onclick="abrirYT(this.href);return false;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.1rem 1.2rem;text-decoration:none;border:1.5px solid rgba(212,175,55,.25);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="width:46px;height:46px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 10px rgba(255,0,0,.35);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff"&gt;&lt;polygon points="5 3 19 12 5 21 5 3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="flex:1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.92rem;line-height:1.4;"&gt;La adoración Eucarística (Santísimo Sacramento) - Mi ratito con Jesús&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="color:rgba(255,255,255,.45);font-size:.72rem;margin-top:.2rem;"&gt;Ver en YouTube&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,.6)" stroke-width="2"&gt;&lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/&gt;&lt;polyline points="15 3 21 3 21 9"/&gt;&lt;line x1="10" y1="14" x2="21" y2="3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ACTIVIDAD 1: MI CARTA A JESÚS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-top:4px solid #3B6D11;margin-top:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:46px;height:46px;border-radius:50%;background:#EAF3DE;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem;"&gt;✉️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3B6D11;margin-bottom:.1rem;"&gt;Actividad 1 · 15 min&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 style="margin:0;color:#1a1a18;"&gt;Mi carta a Jesús&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.78rem;color:#5F5E5A;"&gt;Adoración eucarística para niños · Expresión personal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Guía catequista --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:#EAF3DE;border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/&gt;&lt;circle cx="12" cy="7" r="4"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="font-size:.82rem;font-weight:600;color:#27500A;"&gt;Guía para el catequista&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Materiales --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5F5E5A;margin-bottom:.6rem;"&gt;Antes de empezar&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#F7F6F2;border-radius:8px;padding:.65rem .75rem;font-size:.8rem;color:#5F5E5A;display:flex;gap:.5rem;align-items:flex-start;"&gt;&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"&gt;&lt;polyline points="6 9 6 2 18 2 18 9"/&gt;&lt;path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/&gt;&lt;rect x="6" y="14" width="12" height="8"/&gt;&lt;/svg&gt;Imprimí una hoja-carta por niño&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#F7F6F2;border-radius:8px;padding:.65rem .75rem;font-size:.8rem;color:#5F5E5A;display:flex;gap:.5rem;align-items:flex-start;"&gt;&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"&gt;&lt;path d="M12 20h9"/&gt;&lt;path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/&gt;&lt;/svg&gt;Lápices de colores o biromes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#F7F6F2;border-radius:8px;padding:.65rem .75rem;font-size:.8rem;color:#5F5E5A;display:flex;gap:.5rem;align-items:flex-start;"&gt;&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"&gt;&lt;path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/&gt;&lt;line x1="3" y1="6" x2="21" y2="6"/&gt;&lt;/svg&gt;Una canasta cerca de la custodia&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#F7F6F2;border-radius:8px;padding:.65rem .75rem;font-size:.8rem;color:#5F5E5A;display:flex;gap:.5rem;align-items:flex-start;"&gt;&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"&gt;&lt;path d="M9 18V5l12-2v13"/&gt;&lt;circle cx="6" cy="18" r="3"/&gt;&lt;circle cx="18" cy="16" r="3"/&gt;&lt;/svg&gt;Un canto corto para el cierre&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Lo que decís --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5F5E5A;margin-bottom:.6rem;"&gt;Lo que decís a los niños&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="border-left:3px solid #3B6D11;background:#EAF3DE;padding:.85rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-family:'Playfair Display',serif;font-style:italic;font-size:.87rem;color:#27500A;line-height:1.75;"&gt;"Hoy le vamos a escribir una carta a Jesús. Él está aquí presente en la hostia consagrada y quiere escucharnos. En la hoja van a encontrar tres partes: primero le agradecemos algo, después le pedimos perdón por algo que no hicimos bien, y por último le contamos qué le queremos pedir. Si todavía no saben escribir mucho, pueden dibujar. ¡A Jesús le importa lo que sale del corazón!"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Pasos --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5F5E5A;margin-bottom:.6rem;"&gt;Paso a paso&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-direction:column;gap:.55rem;margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="min-width:26px;height:26px;border-radius:50%;background:#C0DD97;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:#27500A;flex-shrink:0;"&gt;1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.85rem;color:#5F5E5A;padding-top:3px;"&gt;Repartí las hojas y los materiales. Pediles que pongan su nombre.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="min-width:26px;height:26px;border-radius:50%;background:#C0DD97;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:#27500A;flex-shrink:0;"&gt;2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.85rem;color:#5F5E5A;padding-top:3px;"&gt;Dales un ejemplo: &lt;em style="color:#1a1a18;"&gt;"Yo le agradezco a Jesús por mi familia... le pido perdón porque a veces me enojo... y le pido que cuide a mi abuela."&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="min-width:26px;height:26px;border-radius:50%;background:#C0DD97;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:#27500A;flex-shrink:0;"&gt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.85rem;color:#5F5E5A;padding-top:3px;"&gt;Dejá 8–10 minutos de silencio para que escriban o dibujen. Podés poner música suave de fondo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="min-width:26px;height:26px;border-radius:50%;background:#C0DD97;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:#27500A;flex-shrink:0;"&gt;4&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.85rem;color:#5F5E5A;padding-top:3px;"&gt;Invitá a los que quieran a pasar al frente y dejar su carta en la canasta junto a la custodia. Nunca lo hagas obligatorio.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="min-width:26px;height:26px;border-radius:50%;background:#C0DD97;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:#27500A;flex-shrink:0;"&gt;5&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.85rem;color:#5F5E5A;padding-top:3px;"&gt;Cerrá con un momento de silencio mirando al Santísimo y luego con el canto elegido.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Tip --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:#FAEEDA;border-radius:8px;padding:.75rem 1rem;display:flex;gap:.65rem;align-items:flex-start;margin-bottom:1.5rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"&gt;&lt;line x1="12" y1="2" x2="12" y2="6"/&gt;&lt;path d="M12 18a6 6 0 0 0 0-12"/&gt;&lt;line x1="12" y1="22" x2="12" y2="18"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:.8rem;color:#633806;line-height:1.65;"&gt;Con los más pequeños (5–7 años) podés simplificar la carta a solo dibujos: pediles que dibujen algo lindo que quieren darle a Jesús.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Modelo imprimible --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5F5E5A;margin-bottom:.75rem;"&gt;Modelo de hoja para imprimir · una por niño&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:#F7F6F2;border:1px solid #E0DED6;border-radius:14px;padding:1.25rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#fff;border:2px dashed #E0DED6;border-radius:12px;padding:1.5rem 1.25rem;max-width:440px;margin:0 auto;"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Encabezado carta --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="text-align:center;margin-bottom:1.25rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="width:44px;height:44px;border-radius:50%;background:#EAF3DE;display:flex;align-items:center;justify-content:center;margin:0 auto .65rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:#1a1a18;margin-bottom:.6rem;"&gt;Mi carta a Jesús&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:#5F5E5A;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Mi nombre:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="flex:1;max-width:140px;border-bottom:1px solid #E0DED6;height:16px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Sección gracias --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="width:26px;height:26px;border-radius:50%;background:#EAF3DE;display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span style="font-size:.85rem;font-weight:600;color:#27500A;"&gt;Gracias por...&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background:#f4faf0;border:1px solid #E0DED6;border-radius:8px;min-height:58px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Sección perdón --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="width:26px;height:26px;border-radius:50%;background:#FAEEDA;display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;polyline points="9 11 12 14 22 4"/&gt;&lt;path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span style="font-size:.85rem;font-weight:600;color:#633806;"&gt;Perdóname por...&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background:#fdf6ec;border:1px solid #E0DED6;border-radius:8px;min-height:58px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Sección petición --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-bottom:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="width:26px;height:26px;border-radius:50%;background:#E6F1FB;display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;line x1="12" y1="19" x2="12" y2="5"/&gt;&lt;polyline points="5 12 12 5 19 12"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span style="font-size:.85rem;font-weight:600;color:#0C447C;"&gt;Te pido que...&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background:#f0f7fd;border:1px solid #E0DED6;border-radius:8px;min-height:58px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Pie carta --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="text-align:center;border-top:1px dashed #E0DED6;padding-top:.85rem;font-family:'Playfair Display',serif;font-style:italic;font-size:.82rem;color:#5F5E5A;"&gt;Con todo mi corazón, te quiero Jesús.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Botón imprimir --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="text-align:center;margin-top:1rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="window.print()" style="display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;color:#27500A;background:#EAF3DE;border:1px solid #C0DD97;border-radius:8px;padding:.6rem 1.1rem;cursor:pointer;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;polyline points="6 9 6 2 18 2 18 9"/&gt;&lt;path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/&gt;&lt;rect x="6" y="14" width="12" height="8"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Imprimir hoja para los niños</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ JÓVENES ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-jovenes" class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:2rem;margin-bottom:.5rem;"&gt;⚡&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 style="font-size:clamp(1.4rem,4vw,2.2rem);"&gt;Jóvenes&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Adoración eucarística con jóvenes de la Diócesis de Posadas&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Recurso Drive --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:1rem;"&gt;Te compartimos este recurso para la adoración eucarística con los jóvenes. Podés modificarlo si lo deseás.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://drive.google.com/file/d/1ZncG8kCNPMIByCmcCJ8mZ80ansZAKkRR/view?usp=drive_link" target="_blank" rel="noopener"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.25rem 1.35rem;text-decoration:none;border:1.5px solid rgba(212,175,55,.3);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:52px;height:52px;border-radius:12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;position:relative;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="position:absolute;top:0;right:0;width:14px;height:14px;background:var(--gold);border-radius:0 6px 0 8px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c00" stroke-width="2"&gt;&lt;path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/&gt;&lt;polyline points="14 2 14 8 20 8"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="font-size:.5rem;font-weight:900;color:#c00;"&gt;PDF&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="flex:1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;margin-bottom:.2rem;"&gt;Guía de Adoración Eucarística — Jóvenes 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;"&gt;Google Drive · Abrí y descargá&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-radius:50px;padding:.5rem .9rem;display:flex;align-items:center;gap:.35rem;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"&gt;&lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/&gt;&lt;polyline points="15 3 21 3 21 9"/&gt;&lt;line x1="10" y1="14" x2="21" y2="3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="color:#fff;font-size:.72rem;font-weight:700;"&gt;Abrir&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Padlet recordatorio --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" style="border-left:4px solid var(--gold);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;gap:.85rem;align-items:flex-start;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:1.8rem;flex-shrink:0;"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-weight:700;font-size:.95rem;color:var(--text-dark);margin-bottom:.35rem;"&gt;¡Compartí tus fotos!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="font-size:.88rem;color:var(--text-mid);line-height:1.75;"&gt;Recordá que podés subir fotos y videos de la celebración al tablero compartido en la pestaña &lt;strong&gt;Fotos&lt;/strong&gt;. Tu testimonio alimenta la fe de toda la comunidad.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="document.querySelectorAll('.tab-btn')[4].click()" style="margin-top:.65rem;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;border:none;border-radius:50px;padding:.45rem 1.1rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;"&gt;Ir a Fotos →&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Envío --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:20px;padding:1.75rem 1.5rem;border:1.5px solid rgba(212,175,55,.25);text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:.75rem;"&gt;"La Eucaristía nos envía.&lt;br&gt;No nos quedemos conectados solos."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="width:50px;height:2px;background:var(--gold);border-radius:2px;margin:.85rem auto;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="color:rgba(255,255,255,.8);font-size:.9rem;line-height:1.85;"&gt;Invitamos a cada joven a asumir &lt;strong style="color:var(--gold-light);"&gt;obras concretas&lt;/strong&gt; que nos eucaristicen la vida: gestos de servicio, solidaridad y amor que hagan visible a Cristo en nuestro barrio, colegio y familia.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:1.1rem;display:grid;grid-template-columns:1fr 1fr;gap:.75rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;border:1px solid rgba(212,175,55,.15);"&gt;&lt;div style="font-size:1.5rem;margin-bottom:.35rem;"&gt;🍞&lt;/div&gt;&lt;p style="color:var(--gold-light);font-size:.82rem;font-weight:700;"&gt;Compartí el pan&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;margin-top:.2rem;"&gt;No el virtual. El real.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;border:1px solid rgba(212,175,55,.15);"&gt;&lt;div style="font-size:1.5rem;margin-bottom:.35rem;"&gt;🤝&lt;/div&gt;&lt;p style="color:var(--gold-light);font-size:.82rem;font-weight:700;"&gt;Extendé la red&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;margin-top:.2rem;"&gt;Traé a otro a la fuente.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;border:1px solid rgba(212,175,55,.15);"&gt;&lt;div style="font-size:1.5rem;margin-bottom:.35rem;"&gt;💬&lt;/div&gt;&lt;p style="color:var(--gold-light);font-size:.82rem;font-weight:700;"&gt;Hablá de Él&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;margin-top:.2rem;"&gt;El mejor boca a boca.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;border:1px solid rgba(212,175,55,.15);"&gt;&lt;div style="font-size:1.5rem;margin-bottom:.35rem;"&gt;🕯️&lt;/div&gt;&lt;p style="color:var(--gold-light);font-size:.82rem;font-weight:700;"&gt;Sé la luz&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;margin-top:.2rem;"&gt;En la oscuridad de otro.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ FOTOS ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-fotos" class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:2rem;margin-bottom:.5rem;"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Galería Corpus Christi 2026&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Compartí tus fotos de la celebración con toda la comunidad&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:20px;padding:1.75rem 1.5rem;border:1.5px solid rgba(212,175,55,.2);text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:2.5rem;margin-bottom:.75rem;"&gt;🌟&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="color:var(--gold-light);font-size:1.2rem;margin-bottom:.75rem;"&gt;¡Tu foto hace historia!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="color:rgba(255,255,255,.8);font-size:.9rem;line-height:1.85;max-width:480px;margin:0 auto 1rem;"&gt;Subí tus fotos y videos de la procesión, la adoración y los gestos de servicio.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:var(--gold-light);padding:.3rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;"&gt;#CorpusChristi2026&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:var(--gold-light);padding:.3rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;"&gt;#PanDeVida&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:var(--gold-light);padding:.3rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;"&gt;#DiocesisDePosadas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-bottom:1rem;"&gt;¿Cómo compartir?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;flex-direction:column;gap:.7rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:center;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:.85rem;color:#fff;"&gt;1&lt;/div&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;En la parte inferior del tablero encontrarás el signo &lt;strong&gt;+&lt;/strong&gt;, una cámara 📷 o una flecha hacia arriba ⬆. Tocá ahí para subir tu foto o video.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:center;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:.85rem;color:#fff;"&gt;2&lt;/div&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Seleccioná la foto o video desde tu galería o tomate una foto en el momento.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:.75rem;align-items:center;padding:.75rem;background:rgba(255,255,255,.6);border-radius:10px;"&gt;&lt;div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:.85rem;color:#fff;"&gt;3&lt;/div&gt;&lt;p style="font-size:.87rem;color:var(--text-mid);"&gt;Agregá una descripción y publicá tu testimonio. ¡Ya está!&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15);border:2px solid rgba(212,175,55,.3);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));padding:.75rem 1.1rem;display:flex;align-items:center;gap:.6rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="font-size:1.1rem;"&gt;📌&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="color:#fff;font-weight:700;font-size:.88rem;"&gt;Tablero Corpus Christi 2026 — Diócesis de Posadas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://padlet.com/pastoraldecomunicacionposadas/corpus2026" target="_blank" rel="noopener" style="margin-left:auto;background:rgba(255,255,255,.2);color:#fff;border-radius:50px;padding:.25rem .7rem;font-size:.72rem;font-weight:700;text-decoration:none;"&gt;Abrir ↗&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;iframe src="https://padlet.com/embed/pastoraldecomunicacionposadas/corpus2026" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:500px;display:block;background:#fff;" loading="lazy"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ═══ RECURSOS ═══ --&gt;</p>
+<p class="p1">&lt;section id="tab-recursos" class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container gap-y"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;🎵 Recursos y Multimedia&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Material para la celebración y la catequesis&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Taplink --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gold-tag"&gt;🔗 Más Recursos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-bottom:.4rem"&gt;Centro de Recursos Corpus Christi&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.88rem;color:var(--text-light);margin-bottom:.85rem;"&gt;Todos los materiales y links oficiales de la celebración en un solo lugar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://corpuschristi.taplink.site" target="_blank" rel="noopener"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.25rem 1.35rem;text-decoration:none;border:1.5px solid rgba(212,175,55,.3);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="flex:1;"&gt;&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;margin-bottom:.2rem;"&gt;corpuschristi.taplink.site&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;"&gt;Materiales, links y recursos oficiales&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-radius:50px;padding:.5rem .9rem;display:flex;align-items:center;gap:.35rem;flex-shrink:0;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"&gt;&lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/&gt;&lt;polyline points="15 3 21 3 21 9"/&gt;&lt;line x1="10" y1="14" x2="21" y2="3"/&gt;&lt;/svg&gt;&lt;span style="color:#fff;font-size:.72rem;font-weight:700;"&gt;Abrir&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Playlist --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gold-tag"&gt;🎵 Playlist Oficial&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-bottom:.4rem"&gt;Música para el Corpus Christi 2026&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.88rem;color:var(--text-light);margin-bottom:.85rem;"&gt;Canciones eucarísticas para la preparación, adoración y procesión. Se actualiza continuamente.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.youtube.com/watch?v=qT5vUMW0Zl0&amp;list=PLQCAM3NNTRfOQ5chTlMAUcW3IM_Q9k-g8" onclick="abrirYT(this.href);return false;"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>style="display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#1a0f02,#2d1e06);border-radius:14px;padding:1.25rem 1.35rem;text-decoration:none;border:1.5px solid rgba(212,175,55,.3);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:52px;height:52px;border-radius:12px;background:#FF0000;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"&gt;&lt;polygon points="5 3 19 12 5 21 5 3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span style="color:rgba(255,255,255,.85);font-size:.48rem;font-weight:700;margin-top:1px;"&gt;PLAYLIST&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="flex:1;"&gt;&lt;p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;margin-bottom:.2rem;"&gt;Playlist Corpus Christi 2026&lt;/p&gt;&lt;p style="color:rgba(255,255,255,.5);font-size:.75rem;"&gt;YouTube · Se actualiza periódicamente&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#FF0000;border-radius:50px;padding:.5rem .9rem;display:flex;align-items:center;gap:.35rem;flex-shrink:0;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="white"&gt;&lt;polygon points="5 3 19 12 5 21 5 3"/&gt;&lt;/svg&gt;&lt;span style="color:#fff;font-size:.72rem;font-weight:700;"&gt;Abrir&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Himno --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card card-gold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gold-tag"&gt;🎵 Himno Oficial&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;"Pan de Vida, Sangre bendita eres Tú"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="font-size:.88rem;color:var(--text-light);margin-top:.3rem;margin-bottom:.85rem"&gt;Himno oficial para la procesión.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://www.youtube.com/watch?v=nKwqUg9sn8o" onclick="abrirYT(this.href);return false;" class="yt-btn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 24 24" fill="white" width="18" height="18"&gt;&lt;path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.82 1.55V6.79a4.85 4.85 0 0 1-1.05-.1z"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Escuchar en YouTube &lt;span class="yt-song"&gt;— "Pan de Vida, Sangre bendita eres Tú"&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="download-toast" style="display:none;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#fff;padding:1rem 1.25rem;border-radius:12px;text-align:center;font-weight:600;font-size:.88rem;"&gt;📥 &lt;span id="download-name"&gt;&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- FOOTER --&gt;</p>
+<p class="p1">&lt;footer style="background:linear-gradient(160deg,#1a0f02,#2d1e06);color:rgba(255,255,255,.75);padding:3rem 1.25rem;text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="max-width:700px;margin:0 auto;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="font-size:2rem;margin-bottom:1rem;"&gt;✝️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.25rem);color:var(--gold-light);font-style:italic;max-width:640px;margin:0 auto 1.5rem;border-left:3px solid var(--gold);padding-left:1.1rem;text-align:left;"&gt;"La Eucaristía no es solo un sacramento que recibimos; es una realidad que nos transforma. Cuando comulgamos, somos llamados a eucaristizarnos — a volvernos pan partido y vino derramado para nuestros hermanos."&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2rem;"&gt;— Monseñor Juan Rubén Martínez&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1.5rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="social-btn" href="https://www.facebook.com/profile.php?id=100063708490301" target="_blank" rel="noopener"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/&gt;&lt;/svg&gt;Facebook&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="social-btn" href="https://www.instagram.com/pastoral.comunicacion/" target="_blank" rel="noopener"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;rect x="2" y="2" width="20" height="20" rx="5" ry="5"/&gt;&lt;path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/&gt;&lt;line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/&gt;&lt;/svg&gt;Instagram&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="social-btn" href="https://api.whatsapp.com/send?phone=543764681215" target="_blank" rel="noopener"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/&gt;&lt;/svg&gt;WhatsApp&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="font-size:.72rem;color:rgba(255,255,255,.3);"&gt;Solemnidad del Corpus Christi 2026 · "Pan de Vida, Sangre bendita eres Tú"&lt;br&gt;Hecho con ❤️ para la Diócesis de Posadas&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">function abrirYT(url) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (isMobile) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var appUrl = url</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.replace('https://www.youtube.com/watch', 'youtube://www.youtube.com/watch')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.replace('https://youtu.be/', 'youtube://youtu.be/')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.replace('https://www.youtube.com/results', 'youtube://www.youtube.com/results');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var t = setTimeout(function(){ window.location.href = url; }, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener('blur', function(){ clearTimeout(t); }, { once: true });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.location.href = appUrl;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.open(url, '_blank', 'noopener');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showTab(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('tab-' + id).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>event.currentTarget.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.scrollTo({ top: document.querySelector('nav').offsetTop, behavior: 'smooth' });</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">var nudoMsgs = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>0:"Llevá tus alegrías al Señor. Él se alegra con vos.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>1:"Tus dolores no son en vano. Cristo los cargó en la Cruz.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>2:"El Señor conoce tu sufrimiento. Estás acompañado.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>3:"Dejá tus intenciones en Sus manos. Él cuida de los tuyos.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>4:"Presentá tu familia ante el Señor. Él es el Padre de todos.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>5:"La gratitud abre el corazón a recibir aún más de Dios."</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">function toggleStep(el) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var body = el.nextElementSibling;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var isOpen = body.classList.contains('open');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.toggle('open', !isOpen);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body.classList.toggle('open', !isOpen);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateProgress();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateProgress() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var steps = document.querySelectorAll('.step-title');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var opened = document.querySelectorAll('.step-title.open').length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var pct = Math.round((opened / steps.length) * 100);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('prog-bar').style.width = pct + '%';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var labels = ['Comenzando…','En camino…','Avanzando…','¡Casi terminamos!','¡Completado!'];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var idx = Math.min(Math.floor(opened / steps.length * (labels.length - 1)), labels.length - 1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('progress-label').textContent = labels[idx];</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function selectNudo(el) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var cards = document.querySelectorAll('.nudo-card');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var idx = Array.from(cards).indexOf(el);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.toggle('selected');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var msg = document.getElementById('nudo-msg');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (el.classList.contains('selected')) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>msg.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>msg.textContent = nudoMsgs[idx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>msg.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function simDownload(e, name) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var toast = document.getElementById('download-toast');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('download-name').textContent = name;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>toast.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(function(){ toast.style.display = 'none'; }, 3000);</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
